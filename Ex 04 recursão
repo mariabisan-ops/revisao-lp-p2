@@ -1,0 +1,28 @@
+/*
+P(5,3)= 5 * 5 * 5
+P(5,3)= 5 * P(5,2)
+P(5,2)= 5 * P(5,1)
+*/
+
+#include <stdio.h>
+
+int pot (int);
+
+int main (){
+    int k,n;
+    printf ("digite a base: ");
+    scanf ("%d", &k);
+    printf ("digite o expoente: ");
+    scanf ("%d", &n);
+    printf ("potenciação: %d",  pot (k,n));
+}
+
+int pot (int b, int e){
+    if (e==1){
+        return b;
+    }
+    if (e==0){
+        return 1;
+    }
+    return pot (b, e-1) * b;
+}
