@@ -1,0 +1,26 @@
+/*
+M(5,4)= 5+5+5+5 = M(5,3) + 5;
+*/
+
+#include <stdio.h>
+
+int multi (int, int);
+
+int main (){
+    int x,y;
+    printf ("digite o primeiro valor: ");
+    scanf ("%d", &x);
+    printf ("digite o segundo valor: ");
+    scanf ("%d", &y);
+    printf ("multiplicação de %d por %d: %d", x, y, multi (x,y));
+}
+
+int multi (int n1, int n2){
+    if (n2==1){
+        return n1;
+    }
+    if (n1==0 || n2==0){
+        return 0;
+    }
+    return multi (n1, n2 - 1) + n1;
+}
