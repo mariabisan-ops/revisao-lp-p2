@@ -6,7 +6,7 @@ P(5,2)= 5 * P(5,1)
 
 #include <stdio.h>
 
-int pot (int);
+int pot (int, int);
 
 int main (){
     int k,n;
