@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void paresCrescente (int);
+
+int main (){
+    int n;
+    printf ("digite o valor: ");
+    scanf ("%d", &n);
+    printf ("ordem dos pares de 0 até %d: ", n);
+    paresCrescente (n);
+}
+
+void paresCrescente (int n){
+    if (n==0){
+        printf ("0 ");
+    }
+    else {
+        paresCrescente (n-1);
+        if (n%2==0){
+            printf ("%d ", n);
+        }
+    }
+}
