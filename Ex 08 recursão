@@ -1,0 +1,25 @@
+/*
+o(4)= 4 3 2 1 0 = 4 0(3);
+*/
+
+#include <stdio.h>
+
+void imprimeDecrescente (int);
+
+int main (){
+    int n;
+    printf ("digite o valor: ");
+    scanf ("%d", &n);
+    printf ("ordem de %d até 0: ", n);
+    imprimeDecrescente (n);
+}
+
+void imprimeDecrescente (int n){
+    if (n==0){
+        printf ("0 ");
+    }
+    else{
+        printf ("%d", n);
+        ordem (n-1);
+    }
+}
