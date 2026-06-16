@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void binario (int);
+
+int main (){
+    int n;
+    printf ("digite o valor: ");
+    scanf ("%d", &n);
+    printf ("conversão para binário: ")
+    binario(n);
+}
+
+int binario (int n){
+    if (n/2==0){
+        printf ("%d",n%2);
+    }
+    else {
+        binario (n/2);
+        printf ("%d", n%2);
+    }
+}
