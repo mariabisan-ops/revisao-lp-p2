@@ -143,7 +143,7 @@ void insereAluno (Aluno t[], int n, int RA){
   dadosAluno(t, n);
 }
 
-void dadosAluno (Aluno t[], int n){
+void dadosAluno (Aluno t[], int pos){
   printf ("\nNome: ");
   getchar ();
   fgets (t[pos].nome, sizeof (t[pos].nome), stdin);
