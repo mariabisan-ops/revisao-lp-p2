@@ -174,7 +174,6 @@ void removeAluno (Aluno t[], int pos){
 }
 
 void imprimeTurma (Aluno [], int n){
-
   for (int i =0; i<n;i++){
     imprimeAluno (t, i);
   }
@@ -200,8 +199,8 @@ int maiorMedia (Aluno t[], int n){
   float maior = calculaMediaAluno (t, 0);
   pos = 0;
   for (int i=0; i<n; i++){
-    if (calculaMediaTurma (t, i) > maior){
-      maior = calculaMediaTurma (t, i);
+    if (calculaMediaAluno (t, i) > maior){
+      maior = calculaMediaAluno (t, i);
       pos = i;
     }
   }
@@ -217,6 +216,5 @@ int maiorP1 (Aluno t[], intn){
       pos = i;
     }
     return pos;
-  }
-  
+  } 
 }
