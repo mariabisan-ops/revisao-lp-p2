@@ -1,0 +1,26 @@
+/*
+P(4,3) = 4*4*4 = P(4,2)*4
+*/
+
+#include <stdio.h>
+
+int pot (int, int);
+
+int main (){
+  int k, n;
+  printf ("Digite a base: ");
+  scanf ("%d", &k);
+  printf ("Digite o expoente: ");
+  scanf ("%d", &n);
+  printf ("potenciacao: %d", pot(k,n));
+}
+
+int pot (int b, int e){
+  if (e==0){
+    return 1;
+  }
+  if (b==0){
+    return 0;
+  }
+  return pot (b, e-1) * b;
+}
