@@ -5,6 +5,8 @@ S(4) = S(3) + 4;
 
 #include <stdio.h>
 
+int somaN (int);
+
 int main (){
   int n;
   printf ("digite o valor: ");
