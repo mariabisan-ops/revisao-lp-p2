@@ -1,17 +1,20 @@
+/*
+F(4) = 4*3*2*1 = F(3) * 4;
+*/
+
 #include <stdio.h>
 
-int fat (int);
-
 int main(){
-    int n;
-    printf ("digite o valor: ");
-    scanf ("%d", &n);
-    printf ("fatorial: %d", fat(n));
+  int n;
+  printf ("Digite o valor: ");
+  scanf ("%d",&n);
+  printf ("fatorial: %d", fat(n));
 }
 
+
 int fat (int n){
-    if (n==0 || n==1){
-        return 1;
-    }
-    return n*fat(n-1);
+  if (n==0 || n==1){
+    return 1;
+  }
+  return fat(n-1)*n;
 }
