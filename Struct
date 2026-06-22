@@ -2,219 +2,222 @@
 #include <string.h>
 
 typedef struct {
-  char nome [30];
-  int RA;
-  int frequencia;
-  float nota [3];
+    char nome [30];
+    int RA;
+    float nota[3];
+    int frequencia;
 }Aluno;
 
 void imprimeMenu ();
 int buscaAluno (int [], int, int);
 void insereAluno (int [], int, int);
-void dadosAluno (int [], int);
-void imprimeAluno (int [], int);
-void removeAluno ( int [], int, int);
+void dadosAluno (int[], int);
+void imprimeAluno (int, int);
+void removeAluno (int[], int, int);
 void imprimeTurma (int [], int);
 float calculaMediaAluno (int[], int);
 float calculaMediaTurma (int[], int);
-int maiorMedia (int [], int);
+int maiorMedia (int[], int);
 int maiorP1 (int[], int);
 
 int main(){
-  Aluno turma [50];
-  int op, RA, pos;
-  int n=0;
-  while (op!=10){
-    imprimeMenu ();
-    scanf ("%d", &op);
-    switch (op){
-      case 1:
-        if (n==50){
-          printf ("Turma lotada!");
+    Aluno turma[50];
+    int RA, op, pos;
+    int n=0;
+    
+    while (op!=10){
+        imprimeMenu();
+        scanf ("%d", &op);
+        switch (op){
+            case 1:
+                if (n==50){
+                    printf ("Turma loatada!");
+                }
+                else{
+                    printf ("\nRA: ");
+                    scanf ("%d", &RA);
+                    pos = buscaAluno (turma, n, RA);
+                    if (pos==-1){
+                        insereAluno (turma,n, RA);
+                        n++;
+                    }
+                    else{
+                        printf ("Aluno já matriculado.");
+                    }
+                }
+                break;
+            case 2:
+                printf ("\nRA: ");
+                scanf ("%d", &RA);
+                pos = buscaAluno (turma, n, RA);
+                if (pos==-1){
+                    printf ("\nAluno não matriculado!");
+                }
+                else{
+                    printf ("Dados: ");
+                    imprimeAluno (turma, pos);
+                }
+                break;
+            case 3:
+                printf ("RA: ");
+                scanf ("%d", &RA);
+                pos = buscaAluno (turma, n, RA);
+                if (pos==-1){
+                    printf ("\nAluno não encontrado!");
+                }
+                else{
+                    printf ("\nNovos dados: ");
+                    dadosAluno (turma, pos);
+                    printf ("\nDados alterados!");
+                }
+                break;
+            case 4:
+                printf ("\nRA: ");
+                scanf ("%d", &RA);
+                pos = buscaAluno (turma, n, RA);
+                if (n==-1){
+                    printf ("\nAluno não encontrado");
+                }
+                else{
+                    removeAluno (turma, pos);
+                    n--;
+                }
+                break;
+            case 5:
+                imprimeTurma (turma, n);
+                break;
+            case 6:
+                printf ("\nRA: ");
+                scanf ("%d", &RA);
+                pos = buscaAluno (turma, n, RA);
+                if (pos==-1){
+                    printf ("\nAluno não encontrado!");
+                }
+                else{
+                    printf ("\nMedia aluno: %.2f", calculaMediaAluno (turma, pos));
+                }   
+                break;
+            case 7:
+                printf ("\nMedia turma: %.2f", calculaMediaTurma (turma, n));
+                break;
+            case 8:
+                printf ("\nMaior media: %d", maiorMedia (turma, n));
+                break;
+            case 9:
+                printf ("Maior média P1: %d", maiorP1(turma, n));
+                break;
+            case 10:
+                printf ("\nAté logo :)");
+                break;
+            default :
+                printf ("\nOpção incorreta!");
+                break;
         }
-        else{
-          printf ("RA: ");
-          scanf ("%d", &RA);
-          pos = buscaAluno (turma, n, RA);
-          if (pos== -1){
-            insereAluno (turma, n, RA);
-            n++;
-          }
-          else {
-            printf ("Aluno ja matriculado");
-          }
-        }        
-        break;
-       case 2:
-        printf ("\nRA: ");
-        scanf ("%d", &RA);
-        pos = buscaAluno (turma, n, RA);
-        if (pos==-1){
-          printf ("\nAluno nao encontrado");
-        }
-        else {
-          imprimeAluno (turma, pos);
-        }
-        break;
-      case 3:
-        printf ("RA: ");
-        scanf ("%d", &RA);
-        pos = buscaAluno (turma, n, RA);
-        if (pos==-1){
-          printf ("Aluno nao encontrado");
-        }
-        else {
-          printf ("\nNovos dados:");
-          dadosAluno (turma, pos);
-        }
-        break;
-      case 4:
-        printf ("RA: ");
-        scanf ("%d", &RA);
-        pos = buscaAluno (turma, n, RA);
-        if (pos==-1){
-          printf ("Aluno nao encontrado");
-        }
-        else {
-          removeAluno (turma, n, pos);
-          n--;
-        }
-        break;
-      case 5:
-        imprimeTurma (turma, n);
-        break;
-      case 6:
-        printf ("RA: ");
-        scanf ("%d", &RA);
-        pos = buscaAluno (turma, n, RA);
-        if (pos==-1){
-          printf ("\nAluno nao encontrado");
-        }
-        else {
-          printf ("\nMedia: %.2f", calculaMediaAluno (turma, pos));
-        }
-        break;
-      case 7:
-        printf ("\nMedia: %.2f", calculaMediaTurma (turma, n);
-        break;
-      case 8:
-        printf ("\nPosicao do aluno com maior media: %d", maiorMedia (turma, n));
-        break;
-      case 9:
-        printf ("\nPosicao do aluno com maior nota na p1: %d", maiorP1 (turma, n));
-        break;
-      case 10:
-        printf ("\nTchau!");
-        break;
-      default:
-        printf ("\nOpcao incorreta");
-        break;
     }
-  }
 }
 
-void imprimeMenu (){
-  printf ("\nMenu: ");
-  printf ("\n1- Matricular aluno");
-  printf ("\n2- Consultar aluno");
-  printf ("\n3- Alterar dados aluno");
-  printf ("\n4- Remover aluno");
-  printf ("\n5- Vizualizar turma");
-  printf ("\n6- Calcula media do aluno");
-  printf ("\n7- Calcula media turma");
-  printf ("\n8- Vizualizar maior media");
-  printf ("\n9- Vizualizar maior media na p1");
-  printf ("\n10- Sair");
-  printf ("\nOpção: ");
+void imprimeMenu(){
+    printf ("\nMenu: ");
+    printf ("\n1- Matricular aluno");
+    printf ("\n2- Consultar aluno");
+    printf ("\n3- Alterar dados aluno");
+    printf ("\n4- Remover aluno");
+    printf ("\n5- Visualizar turma");
+    printf ("\n6- Calculo média aluno");
+    printf ("\n7- Calculo média turma");
+    printf ("\n8- Visualizar maior media");
+    printf ("\n9- Visualizar maior média P1");
+    printf ("\n10- Sair");
 }
-
 
 int buscaAluno (Aluno t[], int n, int RA){
-  for (int i=0; i<n; i++){
-    if (RA==t[i].RA){
-      return i;
+    for (int i=0; i<n; i++){
+        if (t[i].RA == RA){
+            return i;
+        }
     }
-  }
-  return -1;
-}
-
-void insereAluno (Aluno t[], int n, int RA){
-  t[n].RA = RA;
-  dadosAluno(t, n);
+    return -1;
 }
 
 void dadosAluno (Aluno t[], int pos){
-  printf ("\nNome: ");
-  getchar ();
-  fgets (t[pos].nome, sizeof (t[pos].nome), stdin);
-  t[pos].nome [strlen (t[pos].nome) - 1] = '\0';
-  for (int i=0; i<3; i++){
-    printf ("\nNota %d", i+1);  
-    scanf ("%.2f", &t[pos].nota[i]);
-  }
-  printf ("\nFrequência: ");
-  scanf ("%d", &t[pos].frequencia);
+    printf ("\nNome: ");
+    getchar ();
+    fgets (t[pos].nome, sizeof (t[pos].nome), stdin);
+    t[pos].nome [strlen(t[pos].nome) -1 ] = '\0';
+    printf ("\nNotas: ");
+    for (int i=0; i<3; i++){
+        printf ("\nnota %d: ", i+1);
+        scanf ("%f", t[pos].nota[i]);
+    }
+    printf ("\nFrequência: ");
+    scanf ("%d", &t[pos].frequencia);
 }
 
-void imprimeAluno (Aluno t[],int n, int pos){
-  printf ("\nDados:");
-  printf ("\nRA: %d", t[pos].RA);
-  printf ("\nNome: %s", t[pos].nome");
-  for (int i=0; i<3; i++){
-    printf ("\nNota %d: %.2f", i+1, t[pos].nota[i];
-  }
-  printf ("\nFrequencia: %d", t[pos].frequencia);
+void insereAluno (Aluno t[], int n, int RA){
+    t[n].RA = RA;
+    dadosAluno (t, n);
+    printf ("\nAluno matriculado!");
+}
+
+void imprimeAluno (Aluno t[], int pos){
+    printf ("\nNome: %s", t[pos].nome);
+    printf ("\nRA: %d", t[pos].RA);
+    for (int i=0; i<3; i++){
+        printf ("\nNota %d: %.2f", i+1, t[pos].nota[i]);
+    }
+    printf ("\nFrequência: %d", t[pos].frequencia);
 }
 
 void removeAluno (Aluno t[], int pos){
-  for (int i=pos; i<n; i++{
-    t[i] = t[i+1];
-  }
-  printf ("\nAluno removido");
+    for (int i=0; i<pos; i++){
+        t[i] = t[i+1];
+    }
+    printf ("\nAluno removido!");
 }
 
-void imprimeTurma (Aluno [], int n){
-  for (int i =0; i<n;i++){
-    imprimeAluno (t, i);
-  }
+void imprimeTurma (Aluno t[], int pos){
+    for (int i=0; i<n; i++){
+        imprimeAluno (t, i);
+    }
 }
 
-float calculaMediaAluno (Aluno t[], pos){
-  float soma = 0;
-  for (int i=0; i<3; i++){
-    soma = soma + t[pos].nota[i];
-  }
-  return soma/3;
+float calculaMediaAluno (Aluno t[], int n){
+    float soma = 0;
+    for (int i=0; i<3; i++){
+        soma = soma + t[pos].nota[i];
+    }
+    return soma/3;
 }
 
 float calculaMediaTurma (Aluno t[], int n){
-  float soma =0;
-  for (int i=0; int <n; i++){
-    soma = soma + calculaMediaAluno (t, i);
-  }
-  return soma/n;
+    float soma = 0;
+    for (int i=0; i<n; i++){
+        soma = soma + calculaMediaAluno (t, i);
+    }
+    return soma/n;
 }
 
 int maiorMedia (Aluno t[], int n){
-  float maior = calculaMediaAluno (t, 0);
-  pos = 0;
-  for (int i=0; i<n; i++){
-    if (calculaMediaAluno (t, i) > maior){
-      maior = calculaMediaAluno (t, i);
-      pos = i;
-    }
-  }
-  return pos;
-}
-
-int maiorP1 (Aluno t[], intn){
-  flot maior = t[0].nota[0];
-  pos = 0;
-  for (int i=0; i<n; i++){
-    if (t[i].nota[0] > maior){
-      maior = t[i].nota[0];
-      pos = i;
+    float maior = calculaMediaAluno (t, 0);
+    pos = 0;
+    for (int i = 0; i<n; i++){
+        if (calculaMediaAluno (t,i)>maior){
+            maior = calculaMediaAluno (t,i);
+            pos = i;
+        }
     }
     return pos;
-  } 
 }
+
+int maiorP1 (Aluno t[], int n){
+    float maior = t[0].nota[0];
+    pos = 0;
+    for (int i=0; i<n; i++){
+        if (t[i].nota[0]>maior){
+            maior = t[i].nota[0];
+            pos = i;
+        }
+    }
+    return pos;
+}
+
