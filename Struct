@@ -128,7 +128,7 @@ void imprimeMenu(){
     printf ("\n8- Visualizar maior media");
     printf ("\n9- Visualizar maior média P1");
     printf ("\n10- Sair");
-    printf ("\nOpção: );
+    printf ("\nOpção: ");
 }
 
 int buscaAluno (Aluno t[], int n, int RA){
