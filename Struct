@@ -9,16 +9,16 @@ typedef struct {
 }Aluno;
 
 void imprimeMenu ();
-int buscaAluno (int [], int, int);
-void insereAluno (int [], int, int);
-void dadosAluno (int[], int);
-void imprimeAluno (int, int);
-void removeAluno (int[], int, int);
-void imprimeTurma (int [], int);
-float calculaMediaAluno (int[], int);
-float calculaMediaTurma (int[], int);
-int maiorMedia (int[], int);
-int maiorP1 (int[], int);
+int buscaAluno (Aluno [], int, int);
+void insereAluno (Aluno [], int, int);
+void dadosAluno (Aluno [], int);
+void imprimeAluno (Aluno [], int);
+void removeAluno (Aluno [], int, int);
+void imprimeTurma (Aluno [], int);
+float calculaMediaAluno (Aluno [], int);
+float calculaMediaTurma (Aluno [], int);
+int maiorMedia (Aluno [], int);
+int maiorP1 (Aluno [], int);
 
 int main(){
     Aluno turma[50];
@@ -75,11 +75,11 @@ int main(){
                 printf ("\nRA: ");
                 scanf ("%d", &RA);
                 pos = buscaAluno (turma, n, RA);
-                if (n==-1){
+                if (pos==-1){
                     printf ("\nAluno não encontrado");
                 }
                 else{
-                    removeAluno (turma, pos);
+                    removeAluno (turma, n, pos);
                     n--;
                 }
                 break;
@@ -128,6 +128,7 @@ void imprimeMenu(){
     printf ("\n8- Visualizar maior media");
     printf ("\n9- Visualizar maior média P1");
     printf ("\n10- Sair");
+    printf ("\nOpção: );
 }
 
 int buscaAluno (Aluno t[], int n, int RA){
@@ -147,7 +148,7 @@ void dadosAluno (Aluno t[], int pos){
     printf ("\nNotas: ");
     for (int i=0; i<3; i++){
         printf ("\nnota %d: ", i+1);
-        scanf ("%f", t[pos].nota[i]);
+        scanf ("%f", &t[pos].nota[i]);
     }
     printf ("\nFrequência: ");
     scanf ("%d", &t[pos].frequencia);
@@ -168,20 +169,20 @@ void imprimeAluno (Aluno t[], int pos){
     printf ("\nFrequência: %d", t[pos].frequencia);
 }
 
-void removeAluno (Aluno t[], int pos){
-    for (int i=0; i<pos; i++){
+void removeAluno (Aluno t[], int n, int pos){
+    for (int i=pos; i<n-1; i++){
         t[i] = t[i+1];
     }
     printf ("\nAluno removido!");
 }
 
-void imprimeTurma (Aluno t[], int pos){
+void imprimeTurma (Aluno t[], int n){
     for (int i=0; i<n; i++){
         imprimeAluno (t, i);
     }
 }
 
-float calculaMediaAluno (Aluno t[], int n){
+float calculaMediaAluno (Aluno t[], int pos){
     float soma = 0;
     for (int i=0; i<3; i++){
         soma = soma + t[pos].nota[i];
@@ -199,7 +200,7 @@ float calculaMediaTurma (Aluno t[], int n){
 
 int maiorMedia (Aluno t[], int n){
     float maior = calculaMediaAluno (t, 0);
-    pos = 0;
+    int pos = 0;
     for (int i = 0; i<n; i++){
         if (calculaMediaAluno (t,i)>maior){
             maior = calculaMediaAluno (t,i);
@@ -211,7 +212,7 @@ int maiorMedia (Aluno t[], int n){
 
 int maiorP1 (Aluno t[], int n){
     float maior = t[0].nota[0];
-    pos = 0;
+    int pos = 0;
     for (int i=0; i<n; i++){
         if (t[i].nota[0]>maior){
             maior = t[i].nota[0];
