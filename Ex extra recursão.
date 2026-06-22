@@ -1,0 +1,93 @@
+/*
+imprime vetor, busca menor e maior elemento e inverte vetor.
+*/
+
+#include <stdio.h>
+
+void imprimeVetor (int [], int);
+int buscaMenor (int [], int);
+int buscaMaior (int[], int);
+void inverteVetor (int[], int);
+
+int main(){
+    int v[10];
+    printf ("Preencha o vetor: ");
+    for (int i=0; i<10; i++){
+        printf("\nV[%d]: ", i+1);
+        scanf ("%d", &v[i]);
+    }
+    
+    printf ("\nVetor:\n ");
+    imprimeVetor (v,10);
+    
+    printf ("\nMenor elemento: %d", buscaMenor (v,10));
+    printf ("\nMaior elemento: %d", buscaMaior (v,10));
+    
+    inverteVetor (v,10);
+    printf ("\nVetor invertido: ");
+    for (int i=0; i<10; i++){
+        printf ("%d ", v[i]);
+    }
+}
+
+void imprimeVetor (int v[], int n){
+    if (n==1){
+        printf ("%d ", v[0]);
+    }
+    else {
+        imprimeVetor (v, n-1);
+        printf ("%d ", v[n-1]);
+    }
+}
+
+int buscaMenor (int v[], int n){
+    int menor;
+    if (n==1){
+        return v[0];
+    }
+    else{
+        menor = buscaMenor (v+1, n-1);
+        if (v[0]<menor){
+            return v[0];
+        }
+        else{
+            return menor;
+        }
+    }
+}
+
+int buscaMaior (int v[], int n){
+    int maior;
+    if (n==1){
+        return v[0];
+    }
+    else{
+        maior = buscaMaior (v+1, n-1);
+        if (v[0]>maior){
+            return v[0];
+        }
+        else{
+            return maior;
+        }
+    }
+}
+
+void inverteVetor (int v[], int n){
+    int aux =0;
+    if (n==1){
+        
+    }
+    else{
+        if (n==2){
+            aux = v[0];
+            v[0] = v[1];
+            v[1] = aux;
+        }
+        else{
+            aux = v[0];
+            v[0] = v[n-1];
+            v[n-1] = aux;
+            inverteVetor (v+1, n-2);
+        }
+    }
+}
