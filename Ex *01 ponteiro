@@ -1,0 +1,29 @@
+/*
+Declarar um ponteiro para inteiro n.
+Alocar um inteiro dinamicamente usando o ponteiro n.
+Atribuir um valor ao inteiro por meio do ponteiro.
+Imprimir o valor do ponteiro e o valor do inteiro.
+Pedir para o usuário digitar um valor e preecher o inteiro por meio do ponteiro.
+Imprimir o valor do ponteiro e o valor do inteiro.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+  int *n;
+
+  n = (int *) malloc (sizeof (int));
+
+  *n = 5;
+
+  printf ("Inteiro: %d", *n);
+  printf ("Ponteiro: %p", n);
+
+  printf ("Digite um valor: ");
+  scanf ("%d", &n);
+  printf ("Inteiro: %d", *n);
+  printf ("Ponteiro: %p", n);
+
+  free (n);
+}
