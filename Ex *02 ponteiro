@@ -1,0 +1,27 @@
+/*
+Declarar e preencher uma string.
+Declarar um ponteiro para caractere.
+Alocar dinamicamente uma string com o mesmo número de caracteres da string declarada estaticamente.
+Usando a função strcpy, copiar a string declarada estaticamente na string declarada dinamicamente.
+Imprimir as duas strings e seus endereços.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main (){
+  char str[30];
+  char *t;
+  printf ("Palavra: ");
+  fgets (str, sizeof (str), stdin);
+  str [strlen (stre) - 1] = '\0';
+
+  t = (char*) malloc ((strlen (r))*sizeof (char));
+  strcpy (t, str);
+  printf ("\n%s", str);
+  printf ("\nEndereço: %p", str);
+  printf ("\n%s", t);
+  printf ("\nEndereço: %p", t);
+  free (t);
+}
