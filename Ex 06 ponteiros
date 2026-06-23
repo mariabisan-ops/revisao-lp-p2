@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int somaDobro (int*, int*);
+
+int main(){
+  int x,y;
+  printf ("\nX: ");
+  scanf ("%d", &x);
+  printf ("\nY: ");
+  scanf ("%d", &y);
+  printf ("\nSoma do dobro dos elementos: %d", somaDobro (&x, &y));
+}
+
+int somaDobro (int *a, int *b){
+  *a = 2*(*a);
+  *b = 2*(*b);
+  return (*a) + (*b);
+}
