@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void trocaMaiorValor (int*, int*);
+
+int main (){
+  int x,y;
+  printf ("X: ");
+  scanf ("%d", &x);
+  printf ("Y: ");
+  scanf ("%d", &y);
+  trocaMaiorValor (&x, &y);
+  printf ("%d", x);
+  printf ("%d", y);
+}
+
+void trocaMaiorValor (int *a,int *b){
+  int aux;
+  if (*b>*a){
+    aux = *a;
+    *a = *b;
+    *b = aux;
+  }
+}
