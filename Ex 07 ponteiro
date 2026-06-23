@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void soma (int*, int*);
+
+int main(){
+  int x, y;
+  printf ("X: ");
+  scanf ("%d", &x);
+  printf ("Y: ");
+  scanf ("%d", &y);
+  soma (&x, &y);
+  printf ("\nX: %d", x);
+  printf ("\nY: %d", y);
+}
+
+void soma (int *a, int b){
+  *a = *a + b;
+}
