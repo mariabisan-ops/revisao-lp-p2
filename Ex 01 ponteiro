@@ -1,31 +1,30 @@
-/*
-alocação dinâmica struct
-*/
-
 #include <stdio.h>
 #include <string.h>
 
-typedef struct {
-    char nome [30];
-    int RA;
-    float notas[3];
-    int frequencia;
-}Aluno;
-
 int main(){
-    Aluno *a;
-    
-    a = (Aluno*) malloc (sizeof (Aluno));
-    
-    printf ("\nNome: ");
-    fgets (a->nome, sizeof (a->nome), stdin);
-    a->nome [strlen(a->nome)-1] = '\0';
-    printf ("\nRA: ");
-    scanf ("%d", &a->Ra);
-    for (int i=0; i<3; i++){
-        printf ("\nNota %d: ", i+1);
-        scanf ("%f", &a->nota[i]);
-    }
-    printf ("\nFrequencia: ");
-    scanf ("%d", &a->frequencia);
+  int i, *pi;
+  float f, *pf;
+  char c, *pc;
+  printf ("Inteiro: ");
+  scanf ("%d", &i);
+  printf ("Real: ");
+  scanf ("%f", &f);
+  printf ("Caractere: ");
+  scanf ("%c", &c);
+
+  &i = pi;
+  &f = pf;
+  &c = pc;
+
+  printf ("%d", i);
+  printf ("%f", f);
+  printf ("%c", c);
+
+  *pi = 1;
+  *pf = 2;
+  *pc = A;
+
+  printf ("%d", i);
+  printf ("%f", f);
+  printf ("%c", c);  
 }
