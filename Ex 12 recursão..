@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int buscaMenor (int [], int);
+
+int main(){
+  int v[10];
+  printf ("Preencha vetor: ");
+  for (int i=0; i<10; i++){
+    printf ("\nV[%d]: ", i+1);
+    scanf ("%d", &v[i]);
+  }
+  printf ("\nMenor elemento: %d", buscaMenor (v,10));
+}
+
+void buscaMenor (int v[], int n){
+  int menor;
+  if (n==1){
+    return v[0];
+  }
+  else{
+    menor = buscaMenor (v+1, n-1);
+    if (v[0] < menor){
+      return v[0];
+    }
+    else{
+      return menor;
+    }
+  }
+}
