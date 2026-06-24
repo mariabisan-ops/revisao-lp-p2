@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int somacubos (int);
+
+int main(){
+  int n;
+  printf ("N: ");
+  scanf ("%d", &n);
+  printf ("Soma dos %d primeiros cubos: %d",n, somaCubos(n));
+}
+
+int somaCubos (int n){
+  if (n==1){
+    return 1;
+  }
+  return somaCubos (n-1) + (n*n*n);
+}
