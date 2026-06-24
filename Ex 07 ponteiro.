@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void trocaSoma (int*, int);
+
+int main(){
+  int a, b;
+  printf ("A: ");
+  scanf ("%d", &a);
+  printf ("B: ");
+  scanf ("%d", &b);
+  trocaSoma (&a, b);
+  printf ("\nNovo A: %d", a);
+  printf (\nB: %d ",b);
+}
+
+void trocaSoma (int *a, int b){
+  *a = *a + b;
+}
