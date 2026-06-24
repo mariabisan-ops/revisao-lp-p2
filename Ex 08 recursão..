@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void imprimeDecrescente (int);
+
+int main(){
+  int n;
+  printf ("N: ");
+  scanf ("%d", &n);
+  printf ("Ordem de %d ate 0: ", n);
+  imprimeDecrescente (n);
+}
+
+void imprimeDecrescente (int n){
+  if (n==0){
+    printf ("0 ");
+  }
+  else {
+    printf ("%d ", n);
+    imprimeDecrescente (n-1);
+  }
+}
