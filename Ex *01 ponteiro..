@@ -13,17 +13,18 @@ Imprimir o valor do ponteiro e o valor do inteiro.
 int main(){
   int *n;
 
-  n = (int*) malloc (sizeof (int));
+  n = (int*) malloc (sizeof(int));
 
-  *n = 3;
+  *n = 5;
 
-  printf ("Inteiro: %d", *n);
-  printf ("Ponteiro: %p", n);
+  printf ("\nInteiro: %d", *n);
+  printf ("\nPonteiro: %p", n);
 
-  printf ("Digite o valor: ");
+  printf ("\nDigite um valor: ");
   scanf ("%d", n);
 
-  printf ("Inteiro: %d", *n);
-  printf ("Ponteiro: %p", n);
+  printf ("\nInteiro: %d", *n);
+  printf ("\nPonteiro: %p", n);
+
   free (n);
 }
