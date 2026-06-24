@@ -1,18 +1,13 @@
-/*
-sequencia fibonacci : 0,1,1,2,3,5...
-*/
-
 #include <stdio.h>
 
 int fibonacci (int);
 
 int main(){
   int n;
-  printf ("Digite o termo a ser buscado: ");
+  printf ("N: ");
   scanf ("%d", &n);
-  printf ("%d-esimo termo: %d", n, fibonacci (n));
+  printf ("%d-esimo termo da sequencia: %d", n, fibonacci (n));
 }
-
 
 int fibonacci (int n){
   if (n==1){
