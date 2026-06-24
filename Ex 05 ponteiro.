@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void trocaMaior (int*, int *);
+
+int main (){
+  int a, b;
+  printf ("A: ");
+  scanf ("%d", &a);
+  printf("B: "); 
+  scanf ("%d", &b);
+  trocaMaior (&a, &b);
+  printf ("\nTroca: ");
+  printf("\nA: %d", a);
+  printf("\nB: %d", b);
+}
+
+
+void trocaMaior (int *a, int *b){
+  int aux;
+  if (*b>*a){
+    aux = *a;
+    *a = *b;
+    *b = aux;
+  }
+}
