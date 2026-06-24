@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-void trocaValor (int*, int*);
+void trocaValores (int*, int*);
 
-int main (){
+int main(){
   int a, b;
   printf ("A: ");
   scanf ("%d", &a);
   printf ("B: ");
   scanf ("%d", &b);
-  trocaValor (&a, &b);
-  printf ("\nNovos valores: ");
+  trocaValores (&a, &b);
+  printf ("Após troca: ");
   printf ("\nA: %d", a);
-  printf("\nB: %d", b);
+  printf ("\nB: %d", b);
 }
 
-void trocaValor (int *a, int *b){
+void trocaValores (int *a, int*b){
   int aux;
   aux = *a;
   *a = *b;
-  *b = aux;
+  *b = *a;
 }
