@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int potencia (int, int);
+
+int main(){
+  int k, n;
+  printf ("Base: ");
+  scanf ("%d", &k);
+  printf ("Expoente: ");
+  scanf ("%d", &n);
+  printf ("Potenciaçao: %d", potencia(k,n));
+}
+
+int potencia (int b, int e){
+  if (e==0){
+    return 1;
+  }
+  if (b==0){
+    return 0;
+  }
+  return potencia (b, e-1) * b;
+}
