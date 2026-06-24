@@ -7,6 +7,9 @@ Pedir para o usuário digitar um valor e preecher o inteiro por meio do ponteiro
 Imprimir o valor do ponteiro e o valor do inteiro.
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int main(){
   int *n;
 
@@ -22,4 +25,5 @@ int main(){
 
   printf ("Inteiro: %d", *n);
   printf ("Ponteiro: %p", n);
+  free (n);
 }
