@@ -4,10 +4,11 @@ int main (){
   int v[5];
   printf ("Preencha: ");
   for (int i=0; i<5; i++){
-    printf ("\nV[%d]", i+include <stdio.h>
-
-  printf ("\nVetor: ");
+    printf ("\nV[%d]: ", i+1);
+    scanf ("%d", v+i);
+  }
+  printf ("Vetor: ");
   for (int i=0; i<5; i++){
-    printf ("%d", *(v+i));
+    printf ("\n%d ", *(v+i));
   }
 }
