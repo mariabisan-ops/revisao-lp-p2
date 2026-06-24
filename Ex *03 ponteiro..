@@ -6,28 +6,27 @@ Preencher essa struct por meio do ponteiro.
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-typedef struct{
-  char nome [30];
+typedef struct {
+  char nome[30];
   int RA;
   float nota[3];
-  int frequencia; 
-}Aluno; 
+  int frequencia;
+}Aluno;
 
 int main(){
   Aluno *a;
 
   a = (Aluno*) malloc (sizeof(Aluno));
 
-  printf ("Nome: ");
+  printf ("\nNome: ");
   fgets (a->nome, sizeof (a->nome), stdin);
   a->nome [strlen(a->nome) - 1] = '\0';
-  printf ("RA: ");
-  scanf("%d", &a->RA);
+  printf ("\nRA: ");
+  scanf ("%d", &a->RA);
   for (int i=0; i<3; i++){
     printf ("\nNota %d: ", i+1);
-    scanf ("%f", &a->nota[i]);
+    scanf ("%f", &a->nota);
   }
   printf ("\nFrequencia: ");
   scanf ("%d", &a->frequencia);
