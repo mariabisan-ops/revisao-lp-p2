@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main (){
+  int i, *pi;
+  float f, *pf;
+  char c, *pc;
+  printf ("Inteiro: ");
+  scanf ("%d", &i);
+  printf ("Real: ");
+  scanf ("%f", &f);
+  printf ("Caractere: ");
+  scanf ("%d", &c);
+
+  pi= &i;
+  pf = &f;
+  pc = &c;
+
+  printf ("Valores iniciais: ");
+  printf ("\n%dI: ", i);
+  printf ("\n%fF: ", f);
+  printf ("\n%cC: ", c);
+
+  *pi = 1;
+  *pf = 2;
+  *pc = 3;
+
+  printf ("\nNovos valores: ");
+  printf ("\n%dI: ", i);
+  printf ("\n%fF: ", f);
+  printf ("\n%cC: ", c);
+}
