@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void imprimeCrescente (int);
+
+int main(){
+  int n;
+  printf ("N: ");
+  scanf ("%d", &n);
+  printf ("Ordem de 0 a %d: ", n);
+  imprimeCrescente (n);
+}
+
+
+void imprimeCrescente (int n){
+  if (n==0){
+    printf ("0 ");
+  }
+  else {
+    imprimeCrescente (n-1);
+    printf ("%d ", n);
+  }
+}
