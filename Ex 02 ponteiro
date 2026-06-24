@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 int main(){
-  int x,y;
-  printf ("Endereco de memoria x: %p", &x);
-  printf ("Endereco de memoria y: %p", &y);
-  printf ("Maior endereco de memoria: ");
+  int x, y;
+  printf ("Endereço de x: %p", &x)
+  printf ("Endereço de y: %p", &y);
   if (&x>&y){
-    printf ("endereco de x é maior");
+    printf ("%p", &x);
   }
   else {
-    printf ("endereco de y é maior");
+    printf ("%p", &y);
   }
 }
