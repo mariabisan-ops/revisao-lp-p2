@@ -1,0 +1,31 @@
+/*
+Declarar um ponteiro para inteiro v.
+Declarar um inteiro n.
+Pedir para o usuário digitar o valor de n.
+Usar v para alocar dinamicamente um vetor com n posições.
+Preencher esse vetor e imprimir esse vetor.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+  int *v;
+  int n;
+  printf ("N: ");
+  scanf ("%d", &n);
+
+  v = (int*) malloc (n*(sizeof(int));
+
+  printf ("Preencha o vetor: ");
+  for (int i=0; i<n; i++){
+    printf ("\nV[%d]: ", i+1);
+    scanf ("%d", &v[i]);
+  }
+  printf ("\nVetor:\n ");
+  for (int i=0; i<10; i++){
+    printf ("%d ", v[i]);
+  }
+
+  free (v);
+}
