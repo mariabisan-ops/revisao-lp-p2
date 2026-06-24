@@ -6,11 +6,11 @@ int main(){
   int a, b;
   printf ("A: ");
   scanf ("%d", &a);
-  printf ("B: ");
+  printf ("\nB: ");
   scanf ("%d", &b);
   trocaSoma (&a, b);
-  printf ("\nNovo A: %d", a);
-  printf (\nB: %d ",b);
+  printf ("\nA: %d", a);
+  printf ("\nB: %d", b);
 }
 
 void trocaSoma (int *a, int b){
