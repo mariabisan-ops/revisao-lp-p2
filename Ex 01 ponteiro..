@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(){
+  int n, *pn;
+  float f, *pf;
+  char c, *pc;
+
+  pn = &n;
+  pf= &f;
+  pc = &c;
+
+  printf ("I: ");
+  scanf ("%d", &i);
+  printf ("F: ");
+  scanf ("%f", &f);
+  printf ("C: ");
+  scanf (" %c", &c);
+
+  printf ("\nValores iniciais: ");
+  printf ("\n%d", i);
+  printf ("\n%.2f", f);
+  printf (" \n%c", c);
+
+  *pi = 1;
+  *pf = 2;
+  *pc = 3;
+
+  printf ("\nValores novos: ");
+  printf ("\n%d", i);
+  printf ("\n%.2f", f);
+  printf ("\n%c", c);
+}
