@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int multiplica(int, int);
+
+int main(){
+  int x, y;
+  printf ("N1: ");
+  scanf ("%d", &x);
+  printf ("N2: "); 
+  scanf ("%d", &y);
+  printf ("Multiplicaçao: %d", multiplica(x,y));
+}
+
+int multiplica (int n1, int n2){
+  if (n1==0 || n2==0){
+    return 0;
+  }
+  return multiplica (n1, n2 - 1) + n1;
+}
