@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void trocaValor (int*, int*);
+
+int main (){
+  int a, b;
+  printf ("A: ");
+  scanf ("%d", &a);
+  printf ("B: ");
+  scanf ("%d", &b);
+  trocaValor (&a, &b);
+  printf ("\nNovos valores: ");
+  printf ("\nA: %d", a);
+  printf("\nB: %d", b);
+}
+
+void trocaValor (int *a, int *b){
+  int aux;
+  aux = *a;
+  *a = *b;
+  *b = aux;
+}
