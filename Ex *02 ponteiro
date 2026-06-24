@@ -10,18 +10,16 @@ Imprimir as duas strings e seus endereços.
 #include <stdlib.h>
 #include <string.h>
 
-int main (){
-  char str[30];
+int main(){
+  char palavra [30] = 'mensagem';
   char *t;
-  printf ("Palavra: ");
-  fgets (str, sizeof (str), stdin);
-  str [strlen (stre) - 1] = '\0';
 
-  t = (char*) malloc ((strlen (r))*sizeof (char));
-  strcpy (t, str);
-  printf ("\n%s", str);
-  printf ("\nEndereço: %p", str);
+  t = (char*) malloc ((strlen(palavra)+1 * sizeof (char));
+
+  strcpy (t, palavra);
+
+  printf ("\n%s", palavra);
+  printf ("\n%p", palavra);
   printf ("\n%s", t);
-  printf ("\nEndereço: %p", t);
-  free (t);
+  printf ("\n%p", t);
 }
