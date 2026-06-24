@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int somaN (int);
+
+int main(){
+ int n;
+  printf ("N: ");
+  scanf ("%d", &n);
+  printf ("\nSoma dos elementos de 1 a %d: %d", n, somaN(n));
+}
+
+int somaN (int n){
+  if (n==1){
+    return 1;
+  }
+  return somaN (n-1) + n;
+}
