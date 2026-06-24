@@ -1,0 +1,30 @@
+/*
+Declarar um inteiro e um ponteiro para inteiro.
+Atribuir ao ponteiro, o endereço de memória do inteiro.
+Imprimir o endereço do inteiro e o valor do ponteiro.
+Imprimir o valor do inteiro e esse valor por meio do ponteiro.
+Atualizar o valor do inteiro por meio do ponteiro.
+Imprimir o novo valor do inteiro.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int n;
+  int *pn;
+
+  pn = &n;
+
+  printf ("Endereço inteiro: %p", &n);
+  printf ("\nValor do ponteiro: %p", pn);
+
+  printf("\nN: ");
+  scanf ("%d", &n);
+  printf ("\nInteiro: %d", n);
+  printf ("\nInteiro: %d", *pn);
+
+  *pn = 5;
+
+  printf ("Novo valor: %d", n);
+}
