@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(){
+  int n1, n2;
+  printf ("\nEndereço de N1: %p", &n1);
+  printf ("\nEndereço de N2: %p", &n2);
+  if (&n1>&n2){
+    printf ("\nEndereço de N1 é maior");
+  }
+  else {
+    printf ("Endereço de N2 é maior");
+  }
+}
