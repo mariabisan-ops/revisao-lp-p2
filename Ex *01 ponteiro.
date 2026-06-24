@@ -7,23 +7,19 @@ Pedir para o usuário digitar um valor e preecher o inteiro por meio do ponteiro
 Imprimir o valor do ponteiro e o valor do inteiro.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int main (){
+int main(){
   int *n;
 
-  n = (int *) malloc (sizeof (int));
+  n = (int*) malloc (sizeof (int));
 
-  *n = 5;
+  *n = 3;
 
   printf ("Inteiro: %d", *n);
   printf ("Ponteiro: %p", n);
 
-  printf ("Digite um valor: ");
-  scanf ("%d", &n);
+  printf ("Digite o valor: ");
+  scanf ("%d", n);
+
   printf ("Inteiro: %d", *n);
   printf ("Ponteiro: %p", n);
-
-  free (n);
 }
