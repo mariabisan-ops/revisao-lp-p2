@@ -10,18 +10,17 @@ void inverteString (char[]);
 int main(){
   char palavra[30];
   printf ("Palavra: ");
-  fgets (palavra, sizeof(palavra), stdin);
-  palavra [strlen(palavra)-1] = '\0';
+  fgets (palavra, sizeof (palavra), stdin);
+  palavra [strlen(palavra) -1) ='\0';
   inverteString (palavra);
-  printf ("\nInversao: ");
-  printf("%s", palavra);
+  printf ("\nInversão: %s", palavra);
 }
 
 void inverteString (char p[]){
   char aux;
-  for (int i=0; i<strlen(p); i++){
-    aux = p[i];
-    p[i] = p[strlen(p)-1-i];
-    p[strlen(p) -1-i] = aux;
+  for (int i=0; i<strlen(palavra); int++){
+    aux = p[0];
+    p[0] = p[strlen(p) -1 -i);
+    p[strlen(p) -1 -i] = aux;
   }
 }
