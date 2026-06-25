@@ -8,16 +8,16 @@ conta caracteres
 int contaCaracteres (char[]);
 
 int main(){
-  char palavra[30];
+  char palavra [30];
   printf ("Palavra: ");
-  fgets (palavra, sizeof(palavra), stdin);
-  palavra [contaCaracteres(palavra)-1] = '\0';
-  printf ("%d caracteres", contaCaracteres (palavra));
+  fgets (palavra, sizeof (palavra), stdin);
+  palavra [contaCaracteres (palavra) - 1)= '\0';
+  printf ("\nNumero de caracteres: %d ", contaCaracteres (palavra));
 }
 
-int contaCaracteres (char t[]){
-  int cont=0;
-  while (t[cont]!='\0'){
+int contaCaracteres (char p[]){
+  int cont =0;
+  while (p[cont]!='\0'){
     cont++;
   }
   return cont;
