@@ -7,22 +7,22 @@ palindromo
 
 int palindromo (char[]);
 
-int main(){
-  char palavra[30];
-  printf ("Palavra: ") 
-  fgets (palavra, sizeof(palavra), stdin);
-  palavra [strlen(palavra)-1] = '\0';
-  if (palindromo(palavra)){
-    printf ("É palindromo");
+int main (){
+  char palavra [30];
+  printf ("Palavra: ");
+  fgets (palavra, sizeof (palavra), stdin);
+  palavra [strlen(palavra) -1] ='\0';
+  if (palindromo (palavra)){
+    printf ("\nE palindromo");
   }
   else {
-    printf ("Nao é palindromo");
+    printf ("\nNao e palindromo");
   }
 }
 
 int palindromo (char p[]){
   for (int i=0; i<strlen(p); i++){
-    if (p[i]!=p[strlen(p)] -1-i]{
+    if (p[i]!=p[strlen(p)-1-i){
       return 0;
     }
   }
